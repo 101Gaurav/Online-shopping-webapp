@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:text-decoration="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title> Home-Shopkart </title>
+    <style>
+    h1 {text-align: center;}
+     </style>
+
+</head>
+<body>
+    <h1> Welcome to SHOPKART </h1>
+    {% if user.is_authenticated %}
+        <li>Hello, {{user.first_name}}</li>
+        <li><a href="/account/logout">Logout</a></li>
+        <li> <a href="/account/profile">Profile</a></li>
+    <form action="cart">
+
+        <input type="submit" value="MY CART">
+
+    </form>
+    {% else %}
+        <li><a href="/account/signin">Sign In</a></li>
+        <li><a href="/account/signup">Sign Up</a></li>
+    {% endif %}
+
+    {% for item in items %}
+        <div class="items_content">
+            <div>
+               <img src="{{item.img.url}}" width="400" height="300" alt="Image not found">
+            </div>
+            <div class="items_name">
+
+                    <li><a name={{item.name}} href="/product?{{item.name}}">{{item.name}}</a></li>
+
+            </div>
+            <div class="items_price">
+                <p>&#8377; {{item.price}}</p>
+            </div>
+        </div><br><br>
+    {%endfor%}
+
+
+
+</body>
+</html>

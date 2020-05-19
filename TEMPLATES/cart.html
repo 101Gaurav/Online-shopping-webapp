@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{user.first_name}}'s CART - SHOPKART</title>
+
+</head>
+<body>
+
+
+            <table  style="width:100%">
+                <tr>
+                    <th> Product </th>
+                    <th> Category </th>
+                    <th> Price (&#8377;) </th>
+                    <th> Edit </th>
+                </tr>
+                {for i in all_product}
+                    <tr>
+                        <td>i.product.name  </td>
+                        <td>i.product.category  </td>
+                        <td>i.price </td>
+                        <td>
+                            <a href="delete?{{i.id}}">
+                                <input style="background-color:RED; border-color:black; color:white; font:bold" type="submit" value="DELETE">
+                            </a>
+                        </td>
+
+                    </tr>
+                {%endfor%}
+                <tr>
+                    <th> TOTAL </th>
+                    <th> {{total}} </th>
+                </tr>
+            </table>
+
+
+                <a href="/Payment"><input style="background-color:blue; border-color:black; color:black; font:bold" type="submit" value="PAY"></a>
+
+                <a href="/"><input style="background-color:orange; border-color:black; color:black; font:bold" type="submit" value="CONTINUE SHOPPING"></a>
+
+
+</body>
+</html>

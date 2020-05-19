@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SignUp - Shopkart</title>
+
+
+</head>
+<body>
+
+    <form  action="save" method="post">
+
+        {% csrf_token %}
+
+        <label for="uname">Username :  </label><br>
+        <input type="text" id="uname" name="uname"><br><br>
+
+        <label for="fname">First Name :  </label><br>
+        <input type="text" id="fname" name="fname"><br><br>
+
+        <label for="lname">Last Name :  </label><br>
+        <input type="text" id="lname" name="lname"><br><br>
+
+        <label for="dob">Date of Birth : </label><br>
+        <input type="text" id="dob" placeholder="yyyy-mm-dd" name="dob"><br><br>
+
+        <label for="phone">Phone no. :  </label><br>
+        <input type="text" id="phone" name="phone"><br><br>
+
+        <label for="email">Email Id :  </label><br>
+        <input type="email" id="email" name="email"><br><br>
+
+        <label for="password">Password :  </label><br>
+        <input type="password" id="password" name="password"><br><br>
+
+        <label for="confirm_password">Confirm Password :  </label><br>
+        <input type="password" id="confirm_password" name="confirm_password"><br><br>
+
+        <input type="submit" name="save">
+
+
+
+    </form>
+
+    <div>
+        {%for message in messages%}
+            <h3> {{message}} </h3>
+        {%endfor%}
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SignIn - Shopkart</title>
+
+</head>
+<body>
+
+    <form action="signin" method="post">
+
+        {% csrf_token %}
+
+        <label for="uname">Username :  </label><br>
+        <input type="text" id="uname" name="uname"><br><br>
+        <label for="password">Password :  </label><br>
+        <input type="password" id="password" name="password"><br><br>
+        <input type="submit" name="submit">
+
+
+
+    </form>
+    <div>
+        {%for message in messages%}
+            <h3> {{message}} </h3>
+        {%endfor%}
+    </div>
+
+</body>
+</html>
